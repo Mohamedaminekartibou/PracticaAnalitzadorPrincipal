@@ -1,5 +1,9 @@
 import java.io.*;
 
+
+/**
+ * FiltreLog
+ */
 public class FiltreLog {
 
     public static void main(String[] args) throws Exception {
@@ -10,6 +14,9 @@ public class FiltreLog {
 
         linea = br.readLine();
 
+
+        boolean textBuit = true;
+
         int comptError = 0;
 
         while (linea != null) {
@@ -19,11 +26,19 @@ public class FiltreLog {
           
         }
         
+
+        if (textBuit) {
+            System.err.println("Error: Text buit");
+            System.exit(1);
+        }
+
+
+
+
         System.out.println("Número d'errors: " + comptError);
 
             
-    }catch (Exception e) {
-        System.out.println("Error: " + e.getMessage());
+   
     }
 
     

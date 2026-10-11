@@ -7,9 +7,10 @@ public class AnalitzadorPrincipal {
 
         String classpath = System.getProperty("java.class.path");
   
-        ProcessBuilder pb = new ProcessBuilder("java", "-cp", classpath, "FiltreLog");
+        ProcessBuilder pbError = new ProcessBuilder("java", "-cp", classpath, "FiltreLog");
+        pbError.redirectError(new File("errors_filtre.log"));
 
-        Process fill = pb.start();
+        Process fill = pbError.start();
         
         BufferedWriter out = new BufferedWriter(new OutputStreamWriter(fill.getOutputStream())); 
         
@@ -19,6 +20,9 @@ public class AnalitzadorPrincipal {
         BufferedReader in = new BufferedReader(new InputStreamReader(fill.getInputStream())); 
         
          fill.waitFor();
+
+
+        pbError.redirectError(new File("errors_filtre.log"));
         
     }
     
