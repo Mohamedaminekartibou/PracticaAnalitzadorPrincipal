@@ -1,9 +1,7 @@
 import java.io.*;
 
 
-/**
- * FiltreLog
- */
+
 public class FiltreLog {
 
     public static void main(String[] args) throws Exception {

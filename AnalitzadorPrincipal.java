@@ -7,22 +7,38 @@ public class AnalitzadorPrincipal {
 
         String classpath = System.getProperty("java.class.path");
   
-        ProcessBuilder pbError = new ProcessBuilder("java", "-cp", classpath, "FiltreLog");
-        pbError.redirectError(new File("errors_filtre.log"));
+        ProcessBuilder pbError = new ProcessBuilder(
+                "java", "-cp", classpath, "FiltreLog", "ERROR");
 
-        Process fill = pbError.start();
-        
-        BufferedWriter out = new BufferedWriter(new OutputStreamWriter(fill.getOutputStream())); 
-        
-        out.flush();
-        out.close();
-        
-        BufferedReader in = new BufferedReader(new InputStreamReader(fill.getInputStream())); 
-        
-         fill.waitFor();
-
+        ProcessBuilder pbWarning = new ProcessBuilder(
+                "java", "-cp", classpath, "FiltreLog", "WARNING");
 
         pbError.redirectError(new File("errors_filtre.log"));
+
+        Process pError = pbError.start();
+        Process pWarning = pbWarning.start();
+
+        
+        
+       BufferedWriter outError = new BufferedWriter(
+                new OutputStreamWriter(pError.getOutputStream()));
+
+        BufferedWriter outWarning = new BufferedWriter(
+                new OutputStreamWriter(pWarning.getOutputStream()));
+        
+        
+
+
+
+
+
+
+
+       BufferedReader inError = new BufferedReader(
+                new InputStreamReader(pError.getInputStream()));
+
+        BufferedReader inWarning = new BufferedReader(
+                new InputStreamReader(pWarning.getInputStream()));
         
     }
     
