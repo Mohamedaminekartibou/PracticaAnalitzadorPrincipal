@@ -1,6 +1,4 @@
 
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
 import java.io.*;
 
 public class AnalitzadorPrincipal {
@@ -13,9 +11,14 @@ public class AnalitzadorPrincipal {
 
         Process fill = pb.start();
         
-        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(fill.getOutputStream())); 
+        BufferedWriter out = new BufferedWriter(new OutputStreamWriter(fill.getOutputStream())); 
         
-        BufferedReader br = new BufferedReader(new InputStreamReader(fill.getInputStream()));        
+        out.flush();
+        out.close();
+        
+        BufferedReader in = new BufferedReader(new InputStreamReader(fill.getInputStream())); 
+        
+         fill.waitFor();
         
     }
     
