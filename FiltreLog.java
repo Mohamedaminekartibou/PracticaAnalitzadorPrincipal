@@ -1,5 +1,3 @@
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
 import java.io.*;
 
 public class FiltreLog {
@@ -14,10 +12,14 @@ public class FiltreLog {
 
         int comptError = 0;
 
-        if (linea.contains("ERROR")) {
-            comptError++;
+        while (linea != null) {
+            if (linea.contains("ERROR")) {
+                comptError++;
+            }
+          
         }
-
+        
+        System.out.println("Número d'errors: " + comptError);
 
             
     }catch (Exception e) {
