@@ -14,3 +14,6 @@ Per executar l'analitzador:
 mvn compile
 java -cp target/classes AnalitzadorPrincipal
 ```
+
+
+Me encontre con muchas problemas para ejecutar el AvaluadorPracticaTest.java , porque no lo tenia en un Maven  , pero al final  se resolvio canviando la estructura .
