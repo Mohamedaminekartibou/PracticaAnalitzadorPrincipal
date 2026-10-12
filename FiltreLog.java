@@ -18,14 +18,14 @@ public class FiltreLog {
 
         String linea;
 
-        linea = br.readLine();
+        
         boolean textBuit = true;
         int comptError = 0;
 
 
 
-        while (linea != null) {
-            
+        while ((linea = br.readLine()) != null) {
+
            if (!linea.trim().isEmpty()) {
                 textBuit = false;
             }
@@ -36,22 +36,18 @@ public class FiltreLog {
         }
         
 
-       
-
-
-
         if (textBuit) {
             System.err.println("Error: Text buit");
             System.exit(1);
         }
 
-        System.out.println("Num errors: " + comptError);        
+        System.out.println("Numero: " + comptError);        
         System.exit(0);
         
 
             
-   
     }
+    
 
     
 }
