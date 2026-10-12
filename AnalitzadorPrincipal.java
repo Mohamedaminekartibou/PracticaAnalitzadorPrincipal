@@ -9,11 +9,12 @@ public class AnalitzadorPrincipal {
 
         String text = "INFO Inici\n"
         + "ERROR Fallada 1\n"
-        + "WARNING Disc \n"
         + "ERROR Fallada 2\n"
-        + "WARNING Temperatura\n"
         + "ERROR Fallada 3\n"
-        + "WARNING Memoria\n";
+        + "WARNING Temperatura\n"
+        + "WARNING Memoria\n"
+        + "WARNING Disc\n"
+        + "ERROR Connexió\n";
 
   
         ProcessBuilder pbError = new ProcessBuilder(
