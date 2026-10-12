@@ -6,15 +6,14 @@ public class AnalitzadorPrincipal {
     public static void main(String[] args) throws Exception {
 
         String classpath = System.getProperty("java.class.path");
-
+        
         String text = "INFO Inici\n"
         + "ERROR Fallada 1\n"
         + "ERROR Fallada 2\n"
         + "ERROR Fallada 3\n"
         + "WARNING Temperatura\n"
         + "WARNING Memoria\n"
-        + "WARNING Disc\n"
-        + "ERROR Connexió\n";
+        + "WARNING Disc\n";
 
   
         ProcessBuilder pbError = new ProcessBuilder(
