@@ -9,7 +9,7 @@ public class AnalitzadorPrincipal {
 
         String text = "INFO Inici\n"
         + "ERROR Fallada 1\n"
-        + "WARNING Disc ple\n"
+        + "WARNING Disc \n"
         + "ERROR Fallada 2\n"
         + "WARNING Temperatura\n"
         + "ERROR Fallada 3\n"
@@ -55,6 +55,25 @@ public class AnalitzadorPrincipal {
         BufferedReader inWarning = new BufferedReader(
                 new InputStreamReader(pWarning.getInputStream()));
         
+        String resultatError = inError.readLine();
+        String resultatWarning = inWarning.readLine();
+
+        int exitError = pError.waitFor();
+        int exitWarning = pWarning.waitFor();
+
+        int exitCode = 0;
+
+          if (exitError != 0 || exitWarning != 0) {
+            exitCode = 1;
+        }
+
+        System.out.println( "RESULTAT: ERRORS=" + resultatError + " | WARNINGS=" + resultatWarning  + " | EXIT_CODE=" + exitCode);
+
+
+
     }
+
+   
+
     
 }
